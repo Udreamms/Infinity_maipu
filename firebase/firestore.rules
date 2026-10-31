@@ -1,0 +1,13 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Las canchas son de lectura pública; todo lo demás pasa por la API (Admin SDK).
+    match /courts/{id} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

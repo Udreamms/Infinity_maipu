@@ -1,0 +1,27 @@
+{
+  "name": "infinity-maipu",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n web,api -c cyan,green \"npm run dev -w @infinity/web\" \"npm run dev -w @infinity/api\"",
+    "build": "npm run build -w @infinity/functions && npm run build -w @infinity/database && npm run build -w @infinity/api && npm run build -w @infinity/web",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "db:seed": "npm run seed -w @infinity/database"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "concurrently": "^10.0.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  }
+}
