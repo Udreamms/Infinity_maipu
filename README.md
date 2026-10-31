@@ -17,7 +17,7 @@ Monorepo en TypeScript con npm workspaces.
 
 ```bash
 npm install
-cp .env.example .env   # completa las credenciales de Firebase
+cp .env.example .env.local   # completa las credenciales de Firebase
 npm run dev            # web en :3000 y api en :4000
 npm test
 ```

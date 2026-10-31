@@ -1,4 +1,4 @@
-import "dotenv/config";
+import "./env.js";
 import { COLLECTIONS, getDb } from "./index.js";
 
 const courts = [

@@ -1,4 +1,4 @@
-import "dotenv/config";
+import "@infinity/database/env";
 
 export const config = {
   port: Number(process.env.API_PORT ?? 4000),
